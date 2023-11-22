@@ -1,0 +1,59 @@
+<div>
+    <div class="post-box">
+      <br>
+      <h1>{{post?.title}}</h1>
+      <p>{{post?.author}}</p>
+      <p>{{post?.description}}</p>
+      <p>{{post?.dateCreated}}</p>
+      <img src="{{post?.imgPath}}" style="width: 450px; display: block; margin: auto;"/>
+      <br><br>
+  
+      <div class="content-wrapper">
+        <!-- ... Your existing content ... -->
+  
+        <button class="btn btn-primary reaction-button" (click)="onClick()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up" viewBox="0 0 16 16"> 
+            <!-- ... SVG Path ... -->
+          </svg>&nbsp;{{post?.numberOfLikes}}
+        </button>
+         <!-- ... Rest of your content ... -->
+      </div> 
+  
+      <div class="comment-section">
+        <div class="comment-input">
+          <input type="text" [(ngModel)]="commentText" placeholder="Add a comment">
+          <button (click)="addComment(commentText)">Comment</button>
+        </div>
+      </div>
+  
+      <div class="comment-container">
+        <div *ngFor="let comment of post?.comments">
+          <div class="comment-box">
+            <p class="comment-text">{{ comment }}</p>
+          </div>
+        </div>
+      </div>
+      <br>
+  
+      <!-- <div class="button-container">
+        <button class="btn facebook-like-button" (click)="onClick()">
+          <span class="like-icon">&#128077;</span>&nbsp;{{post?.numberOfLikes}}
+        </button>
+        <button class="btn facebook-comment-button" (click)="toggleCommentBox()">Comment</button>
+      </div>
+      
+      <div class="comment-section" *ngIf="showCommentBox">
+        <div class="comment-input">
+          <input type="text" [(ngModel)]="commentText" placeholder="Write a comment...">
+          <button class="btn facebook-comment-submit" (click)="addComment(commentText)">Comment</button>
+        </div>
+      </div> -->
+      
+      
+  
+      <br>
+  
+      <button class="btn btn-primary" (click)="onEdit()">Edit</button> | <button class="btn btn-danger" (click)="delete()">Delete</button>
+    </div>
+  </div>
+  
