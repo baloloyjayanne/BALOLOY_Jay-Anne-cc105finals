@@ -19,7 +19,6 @@
       </li>
 
       <form onsubmit="event.preventDefault();" role="search">
-        <label for="search">Search for stuff</label>
       <input id="search" type="search" [(ngModel)]="searchKeyword" placeholder="Search..." autofocus required />
       <button (click)="searchPosts()">Go</button>
       </form>
