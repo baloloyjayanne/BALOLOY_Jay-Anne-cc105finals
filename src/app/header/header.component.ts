@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BackEndService } from '../back-end.service';
 import { PostService } from '../post-service'; // Import PostService
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,11 +12,14 @@ import { PostService } from '../post-service'; // Import PostService
 export class HeaderComponent implements OnInit {
   listOfPosts: any;
   searchKeyword: string;
+  user$ = this.authService.user$;
 
 
   constructor(
     private backEndService: BackEndService,
-    private postService: PostService // Inject PostService
+    private postService: PostService, // Inject PostService
+    private authService: AuthService, 
+    private router: Router
   ) {
     this.searchKeyword = '';
   }
@@ -34,5 +39,12 @@ export class HeaderComponent implements OnInit {
 
 searchPosts() {
   this.postService.searchPosts(this.searchKeyword);
+}
+
+logout() {
+  this.authService.signOut().then(() => {
+    
+    this.router.navigate(['/login']);
+  });
 }
 }
