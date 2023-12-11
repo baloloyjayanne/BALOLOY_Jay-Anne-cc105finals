@@ -12,14 +12,3 @@
   background-color: #2980b9;
 }
 
-body.dark-mode {
-  /* Add your dark mode styles here */
-  background-color: #2c3e50;
-  color: #ecf0f1;
-}
-
-body.light-mode {
-  /* Add your light mode styles here */
-  background-color: #ecf0f1;
-  color: #2c3e50;
-}
