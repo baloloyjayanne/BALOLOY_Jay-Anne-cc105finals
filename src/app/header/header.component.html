@@ -3,9 +3,9 @@
 
 <!-- Add this link tag to your index.html or include FontAwesome in another way -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+<div *ngIf="user$ | async">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CRUD</a>
+  <a class="navbar-brand" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>SnapCraze</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -14,7 +14,6 @@
       <li class="nav-item active">
         <a class="nav-link" routerLink="/post-list">Home <span class="sr-only"></span></a>
       </li>
-
 
       <li class="nav-item">
         <a class="nav-link" routerLink="/post-add">Create Post</a>
@@ -41,3 +40,4 @@
     </ul>
   </div>
 </nav>
+</div>
